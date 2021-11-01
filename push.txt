@@ -1,1 +1,18 @@
 D:\WorkTools\ffmpeg\bin\ffmpeg.exe -re -rtsp_transport tcp -i "rtsp://admin:bjfyjs123@192.168.0.100:554/h264/ch1/sub/av_stream" -f flv -vcodec libx264 -vprofile baseline -acodec aac -ar 44100 -strict -2 -ac 1 -f flv -s 640x480 -q 10 "rtmp://1.15.223.38:1936/hlss"
+
+git clone git://git.videolan.org/x264.git
+cd x264
+mv ../config_x264_rpi.sh ./
+chmod +x config_x264_rpi.sh
+./config_x264_rpi.sh
+make -j4
+sudo make install
+
+wget http://ffmpeg.org/releases/ffmpeg-4.3.3.tar.bz2
+tar jxvf ffmpeg-4.3.3.tar.bz2
+cd ffmpeg-4.3.3
+mv ../config_ffmpeg_rpi.sh ./
+chmod +x config_ffmpeg_rpi.sh
+./config_ffmpeg_rpi.sh
+make -j4
+sudo make install
