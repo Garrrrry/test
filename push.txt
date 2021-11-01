@@ -1,0 +1,1 @@
+D:\WorkTools\ffmpeg\bin\ffmpeg.exe -re -rtsp_transport tcp -i "rtsp://admin:bjfyjs123@192.168.0.100:554/h264/ch1/sub/av_stream" -f flv -vcodec libx264 -vprofile baseline -acodec aac -ar 44100 -strict -2 -ac 1 -f flv -s 640x480 -q 10 "rtmp://1.15.223.38:1936/hlss"
